@@ -1,0 +1,7 @@
+{
+  "name": "Shisha Lounge AI CRM",
+  "description": "A comprehensive CRM for Shisha Lounges featuring AI-powered flavor recommendations, customer history tracking, and inventory management.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
