@@ -1,8 +1,9 @@
 
 import React, { useState } from 'react';
+import { Customer } from '../types';
 
 interface Props {
-  onSubmit: (data: { name: string, nickname: string, snsAccount: string, birthday: string, dislikes: string, notes: string }) => void;
+  onSubmit: (data: { name: string, nickname: string, snsAccount: string, birthday: string, dislikes: string, notes: string }) => Customer;
   onSuccess: (id: string) => void;
 }
 
@@ -19,9 +20,9 @@ const CustomerForm: React.FC<Props> = ({ onSubmit, onSuccess }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const id = `S${Math.floor(1000 + Math.random() * 9000)}`; // Simulated
-    onSubmit({ ...formData });
-    setSubmittedId(id);
+    const newCustomer = onSubmit({ ...formData });
+    setSubmittedId(newCustomer.id);
+    onSuccess(newCustomer.id);
   };
 
   if (submittedId) {

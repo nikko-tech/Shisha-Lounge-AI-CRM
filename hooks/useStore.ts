@@ -25,15 +25,18 @@ export const useStore = () => {
   }, [state]);
 
   const addCustomer = useCallback((customer: Omit<Customer, 'id' | 'visitCount' | 'lastVisitDate'>) => {
-    const newCustomer: Customer = {
-      ...customer,
-      id: `S${String(state.customers.length + 1).padStart(4, '0')}`,
-      visitCount: 0,
-      lastVisitDate: '-'
-    };
-    setState(prev => ({ ...prev, customers: [...prev.customers, newCustomer] }));
-    return newCustomer;
-  }, [state.customers.length]);
+    let newCustomer: Customer | null = null;
+    setState(prev => {
+      newCustomer = {
+        ...customer,
+        id: `S${String(prev.customers.length + 1).padStart(4, '0')}`,
+        visitCount: 0,
+        lastVisitDate: '-'
+      };
+      return { ...prev, customers: [...prev.customers, newCustomer] };
+    });
+    return newCustomer as Customer;
+  }, []);
 
   const addVisit = useCallback((visit: Omit<VisitHistory, 'id'>) => {
     const newVisit: VisitHistory = {

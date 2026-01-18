@@ -8,7 +8,6 @@ import CustomerDetail from './components/CustomerDetail';
 import VisitLogForm from './components/VisitLogForm';
 import FlavorInventory from './components/FlavorInventory';
 import AIInsights from './components/AIInsights';
-/* Fix: Added missing quotes around the module path for the hooks import */
 import { useStore } from './hooks/useStore';
 
 type Tab = 'dashboard' | 'customers' | 'flavors' | 'insights' | 'customerDetail' | 'addVisit';
@@ -79,7 +78,7 @@ const App: React.FC = () => {
       role={role} 
       setRole={(newRole) => {
         setRole(newRole);
-        setActiveTab(newRole === 'staff' ? 'dashboard' : 'dashboard');
+        setActiveTab('dashboard');
       }}
     >
       {renderContent()}

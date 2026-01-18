@@ -19,7 +19,6 @@ const FlavorInventory: React.FC<Props> = ({ flavors, onUpdateStock }) => {
         <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
           <FilterTab active={filter === 'ALL'} onClick={() => setFilter('ALL')} label="All" />
           {Object.values(FlavorCategory).map(cat => (
-            /* Fix: Added key prop and using React.FC for FilterTab to ensure 'key' is recognized as a valid internal prop */
             <FilterTab 
               key={cat} 
               active={filter === cat} 
@@ -64,7 +63,6 @@ const FlavorInventory: React.FC<Props> = ({ flavors, onUpdateStock }) => {
   );
 };
 
-/* Fix: Explicitly typed as React.FC to include standard React props like 'key' in the type definition */
 const FilterTab: React.FC<{ active: boolean; onClick: () => void; label: string }> = ({ active, onClick, label }) => (
   <button
     onClick={onClick}
