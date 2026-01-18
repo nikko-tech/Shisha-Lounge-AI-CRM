@@ -1,4 +1,3 @@
-
 import { FlavorCategory, Flavor } from './types';
 
 export const INITIAL_FLAVORS: Flavor[] = [

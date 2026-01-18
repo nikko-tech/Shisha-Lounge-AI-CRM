@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Layout from './components/Layout';
 import StaffDashboard from './components/StaffDashboard';
@@ -28,12 +27,7 @@ const App: React.FC = () => {
 
   const renderContent = () => {
     if (role === 'customer') {
-      return (
-        <CustomerForm 
-          onSubmit={addCustomer} 
-          onSuccess={(id) => {}} 
-        />
-      );
+      return <CustomerForm onSubmit={addCustomer} />;
     }
 
     switch (activeTab) {

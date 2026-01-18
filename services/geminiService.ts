@@ -1,4 +1,3 @@
-
 import { GoogleGenAI } from "@google/genai";
 import { Customer, VisitHistory, Flavor } from '../types';
 

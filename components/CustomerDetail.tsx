@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Customer, VisitHistory, Flavor } from '../types';
 import { getMixRecommendation } from '../services/geminiService';

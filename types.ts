@@ -1,4 +1,3 @@
-
 export enum FlavorCategory {
   FRUIT = 'Fruit',
   SPICE = 'Spice',

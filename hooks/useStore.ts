@@ -1,6 +1,5 @@
-
 import { useState, useEffect, useCallback } from 'react';
-import { AppState, Customer, VisitHistory, Flavor } from '../types';
+import { AppState, Customer, VisitHistory } from '../types';
 import { INITIAL_FLAVORS, APP_STORAGE_KEY } from '../constants';
 
 export const useStore = () => {

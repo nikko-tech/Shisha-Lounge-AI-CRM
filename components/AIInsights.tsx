@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Customer } from '../types';
 import { getChurnAnalysis } from '../services/geminiService';

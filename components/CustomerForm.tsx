@@ -1,13 +1,11 @@
-
 import React, { useState } from 'react';
 import { Customer } from '../types';
 
 interface Props {
   onSubmit: (data: { name: string, nickname: string, snsAccount: string, birthday: string, dislikes: string, notes: string }) => Customer;
-  onSuccess: (id: string) => void;
 }
 
-const CustomerForm: React.FC<Props> = ({ onSubmit, onSuccess }) => {
+const CustomerForm: React.FC<Props> = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
     name: '',
     nickname: '',
@@ -22,7 +20,6 @@ const CustomerForm: React.FC<Props> = ({ onSubmit, onSuccess }) => {
     e.preventDefault();
     const newCustomer = onSubmit({ ...formData });
     setSubmittedId(newCustomer.id);
-    onSuccess(newCustomer.id);
   };
 
   if (submittedId) {
